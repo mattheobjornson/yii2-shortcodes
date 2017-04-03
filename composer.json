@@ -1,5 +1,5 @@
 {
-    "name": "tpoxa/shortcodes",
+    "name": "mattheobjornson/yii2-shortcodes",
     "description": "Wordpress style shorttags support for Yii2",
     "type": "yii2-extension",
     "keywords": ["yii2", "shortcode"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tpoxa\\shortcodes\\": ""
+            "mattheobjornson\\shortcodes\\": ""
         }
     }
 }
