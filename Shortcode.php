@@ -39,6 +39,28 @@ class Shortcode extends Component {
     }
 
     /**
+     * Clean shortcodes in given content
+     *
+     * @param string $content Content to strip shortcodes
+     * @return string
+     */
+    public function strip($content) {
+
+        $result = $content;
+
+        $shortcodes = $this->getShortcodeList($content);
+        foreach ($shortcodes as $shortcode) {
+            // Only process known/supported shortcodes
+            if (in_array($shortcode, array_keys($this->callbacks))) {
+                $regexp = $this->getShortcodeRegexp($shortcode);
+                $result = preg_replace("/$regexp/s", '', $result);
+            }
+        }
+
+        return $result;
+    }
+
+    /**
      * Parse single shortcode
      * 
      * Borrowed from WordPress wp/wp-includes/shortcode.php
