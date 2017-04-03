@@ -1,6 +1,6 @@
 <?php
 
-namespace tpoxa\shortcodes;
+namespace mattheobjornson\shortcodes;
 
 use yii\base\Component;
 
